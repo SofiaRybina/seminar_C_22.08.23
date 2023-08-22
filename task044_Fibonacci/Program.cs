@@ -7,12 +7,12 @@
 
 int[] CreateFibonacciArray(int num)
 {
-    int[] array = new int [num];
+    int[] array = new int[num];
     //array[0] = 0; //коммитим, потому что массив при создании заполняется нулями 
     array[1] = 1;
     for (int i = 2; i < num; i++)
     {
-        array[i] = array[i - 1] + array[i - 2];        
+        array[i] = array[i - 1] + array[i - 2];
     }
     return array;
 }
@@ -32,5 +32,11 @@ void PrintArray(int[] arr)
 
 Console.WriteLine("Input number: ");
 int number = Convert.ToInt32(Console.ReadLine());
+
+if (number < 2)
+{
+    Console.WriteLine("Please enter a number greater than one!");
+    return;
+}
 
 PrintArray(CreateFibonacciArray(number));
